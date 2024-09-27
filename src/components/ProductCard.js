@@ -26,7 +26,7 @@ const ProductCard = ({ product, toggleFavorite, addToCart, isFavorite }) => {
         </div>
         <p className="text-gray-600">${(product.price * (1 - product.discount / 100)).toFixed(2)}</p>
         <button 
-          className="mt-4 bg-blue-600 text-white py-2 px-4 rounded-md"
+          className="mt-4 bg-gray-800 text-gray-300 py-2 px-4 rounded-md"
           onClick={() => addToCart(product.name)}
         >
           <ShoppingCart className="inline-block mr-2" /> Add to Cart

@@ -13,10 +13,13 @@ const FilterOptions = ({
   setMinRating 
 }) => {
   return (
-    <div className="mb-6 space-y-4">
-      <div className="flex flex-wrap gap-4">
+    <div className="filter-container">
+      <h2 className="filter-title">Filters</h2>
+      
+      <div className="filter-section">
+        <h3 className="filter-subtitle">Category</h3>
         <select
-          className="p-2 border rounded-md"
+          className="filter-select"
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
         >
@@ -24,8 +27,12 @@ const FilterOptions = ({
           <option value="Electronics">Electronics</option>
           <option value="Personal Care">Personal Care</option>
         </select>
+      </div>
+
+      <div className="filter-section">
+        <h3 className="filter-subtitle">Brand</h3>
         <select
-          className="p-2 border rounded-md"
+          className="filter-select"
           value={selectedBrand}
           onChange={(e) => setSelectedBrand(e.target.value)}
         >
@@ -37,8 +44,12 @@ const FilterOptions = ({
           <option value="SecureView">SecureView</option>
           <option value="DentalTech">DentalTech</option>
         </select>
+      </div>
+
+      <div className="filter-section">
+        <h3 className="filter-subtitle">Sort By</h3>
         <select
-          className="p-2 border rounded-md"
+          className="filter-select"
           value={sortOption}
           onChange={(e) => setSortOption(e.target.value)}
         >
@@ -49,8 +60,13 @@ const FilterOptions = ({
           <option value="newestArrivals">Newest Arrivals</option>
         </select>
       </div>
-      <div>
-        <label className="block mb-2">Price Range</label>
+
+      <div className="filter-section">
+        <h3 className="filter-subtitle">Price Range</h3>
+        <div className="price-display">
+          <span>${priceRange[0]}</span>
+          <span>${priceRange[1]}</span>
+        </div>
         <input
           type="range"
           min={0}
@@ -58,7 +74,7 @@ const FilterOptions = ({
           step={10}
           value={priceRange[0]}
           onChange={(e) => setPriceRange([+e.target.value, priceRange[1]])}
-          className="w-full"
+          className="price-range"
         />
         <input
           type="range"
@@ -67,15 +83,12 @@ const FilterOptions = ({
           step={10}
           value={priceRange[1]}
           onChange={(e) => setPriceRange([priceRange[0], +e.target.value])}
-          className="w-full"
+          className="price-range"
         />
-        <div className="flex justify-between mt-2">
-          <span>${priceRange[0]}</span>
-          <span>${priceRange[1]}</span>
-        </div>
       </div>
-      <div>
-        <label className="block mb-2">Minimum Rating</label>
+
+      <div className="filter-section">
+        <h3 className="filter-subtitle">Min Rating</h3>
         <input
           type="range"
           min={0}
@@ -83,15 +96,15 @@ const FilterOptions = ({
           step={0.5}
           value={minRating}
           onChange={(e) => setMinRating(+e.target.value)}
-          className="w-full"
+          className="rating-range"
         />
-        <div className="flex items-center mt-2">
+        <div className="stars">
           {[1, 2, 3, 4, 5].map((star) => (
-            <span key={star} className={`h-5 w-5 ${star <= minRating ? 'text-yellow-400' : 'text-gray-300'}`}>
+            <span key={star} className={`star ${star <= minRating ? 'active' : ''}`}>
               ★
             </span>
           ))}
-          <span className="ml-2">and up</span>
+          <span className="rating-text">and up</span>
         </div>
       </div>
     </div>

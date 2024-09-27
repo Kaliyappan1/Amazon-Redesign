@@ -3,3 +3,64 @@
 @tailwind utilities;
 
 
+.filter-container {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    max-width: 300px; /* Adjust this to your desired width */
+    margin: 0 auto; /* Center align in the container */
+  }
+  
+  .filter-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center; /* Center align title */
+  }
+  
+  .filter-section {
+    margin-bottom: 15px; /* Space between sections */
+    border-bottom: 1px solid #e0e0e0; /* Add bottom border */
+    padding-bottom: 10px; /* Padding below section */
+  }
+  
+  .filter-subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  
+  .filter-select, .price-range, .rating-range {
+    width: 100%;
+    padding: 6px; /* Smaller padding */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem; /* Smaller font size */
+  }
+  
+  .price-display {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+  
+  .stars {
+    display: flex;
+    align-items: center;
+  }
+  
+  .star {
+    font-size: 18px; /* Smaller star size */
+    color: #ccc;
+  }
+  
+  .star.active {
+    color: #ffcc00; /* Yellow color for filled stars */
+  }
+  
+  .rating-text {
+    margin-left: 4px; /* Smaller margin */
+    font-size: 0.8rem; /* Smaller text */
+  }
+  

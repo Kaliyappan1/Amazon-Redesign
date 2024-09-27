@@ -259,23 +259,6 @@ const allProducts = [
   },
 ];
 
-
-const LoginModal = ({ onClose }) => (
-  <div className="modal">
-    <h2>Login</h2>
-    {/* Your login form here */}
-    <button onClick={onClose}>Close</button>
-  </div>
-);
-
-const SignupModal = ({ onClose }) => (
-  <div className="modal">
-    <h2>Signup</h2>
-    {/* Your signup form here */}
-    <button onClick={onClose}>Close</button>
-  </div>
-);
-
 const ProductList = () => {
   const [favorites, setFavorites] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -355,8 +338,8 @@ const ProductList = () => {
         setSearchTerm={setSearchTerm}
         onAccountClick={handleAccountClick} // Pass account click handler
       />
-      <div className="container mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-6">Product List</h1>
+      <div className="container mx-auto p-2 ">
+        
         <FilterOptions
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
@@ -382,8 +365,7 @@ const ProductList = () => {
         </div>
         {toast.visible && <div className="toast">{toast.message}</div>}
       </div>
-      {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} />}
-      {showSignupModal && <SignupModal onClose={() => setShowSignupModal(false)} />}
+      
     </div>
   );
 };

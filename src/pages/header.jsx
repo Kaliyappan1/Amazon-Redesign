@@ -1,5 +1,3 @@
-'use client';
-
 import { useState } from 'react';
 import { ShoppingCart, User, Search, Menu } from 'lucide-react';
 
@@ -73,7 +71,7 @@ export default function Header({ searchTerm, setSearchTerm, cartCount }) {
                   placeholder="Search products..."
                   className="w-full pl-10 pr-4 py-3 rounded-full bg-gray-700 text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)} // Update search term
+                  onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               </div>

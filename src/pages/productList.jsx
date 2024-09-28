@@ -1239,9 +1239,9 @@ const ProductList = () => {
   const [filteredProducts, setFilteredProducts] = useState(allProducts);
   const [toast, setToast] = useState({ message: "", visible: false });
   const [cartCount, setCartCount] = useState(0);
-  const [selectedProduct, setSelectedProduct] = useState(null); // State for selected product
+  const [selectedProduct, setSelectedProduct] = useState(null); 
 
-  // Filter products based on search term and other criteria
+
   useEffect(() => {
     const result = allProducts.filter(
       (product) =>
@@ -1298,17 +1298,17 @@ const ProductList = () => {
     setToast({ message, visible: true });
     setTimeout(() => {
       setToast({ message: "", visible: false });
-    }, 3000); // Duration for the toast to be visible
+    }, 3000);
   };
 
-  // Function to open the product details modal
+  
   const handleProductClick = (product) => {
-    setSelectedProduct(product); // Set the selected product
+    setSelectedProduct(product); 
   };
 
-  // Function to close the modal
+
   const closeModal = () => {
-    setSelectedProduct(null); // Clear the selected product
+    setSelectedProduct(null); 
   };
 
   return (
@@ -1349,10 +1349,10 @@ const ProductList = () => {
         </div>
       </div>
 
-      {/* Show the toast message */}
+  
       {toast.visible && <Toast message={toast.message} />}
 
-      {/* Render the modal if a product is selected */}
+
       <Modal product={selectedProduct} onClose={closeModal} />
     </div>
   );

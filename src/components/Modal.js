@@ -1,13 +1,12 @@
-// Modal.js
 import React from 'react';
 
 const Modal = ({ product, onClose }) => {
-  if (!product) return null; // Don't render if no product is provided
+  if (!product) return null;
 
-  // Function to handle overlay click
+  
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
-      onClose(); // Close the modal
+      onClose(); 
     }
   };
 

@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./pages/footer"; // Ensure correct import case
 import ProductList from "./pages/productList"; // Ensure correct import case
-import ProductPage from "./pages/productPage"; // Ensure correct import case
 import UserAccount from "./pages/userAccount"; // Ensure correct import case
 
 function App() {
@@ -11,7 +10,6 @@ function App() {
         {/* Define your routes */}
         <Routes>
           <Route path="/" element={<ProductList />} />
-          <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/account" element={<UserAccount />} />
         </Routes>
         <Footer />

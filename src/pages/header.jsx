@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { ShoppingCart, User, Search, Menu } from 'lucide-react';
 
-export default function Header({ onAccountClick, searchTerm, setSearchTerm, cartCount }) {
+export default function Header({ searchTerm, setSearchTerm, cartCount }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -39,7 +39,6 @@ export default function Header({ onAccountClick, searchTerm, setSearchTerm, cart
                 className="flex items-center transition duration-200 hover:text-blue-500"
                 onClick={() => {
                   setIsMenuOpen(!isMenuOpen);
-                  onAccountClick(); // Call parent method to show login form
                 }}
               >
                 <User className="mr-1" />

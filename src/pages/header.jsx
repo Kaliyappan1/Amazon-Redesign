@@ -10,7 +10,7 @@ export default function Header({ onAccountClick, searchTerm, setSearchTerm }) {
     <header className="bg-gray-900 text-white shadow-lg">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <a href="/" className="text-3xl font-bold transition duration-300 ease-in-out transform hover:scale-105">AmaClone</a>
+          <a href="/" className="text-3xl font-bold transition duration-300 ease-in-out transform hover:scale-105">Amazon</a>
           
           {/* Desktop Search Input */}
           <div className="hidden md:flex items-center space-x-6 flex-grow justify-center">

@@ -1,6 +1,7 @@
 // App.js
 import Footer from "./pages/footer";
 import ProductList from "./pages/productList";
+import ProductPage from "./pages/productPage";
 import UserAccount from "./pages/userAccount";
 import { useState, useEffect } from 'react';
 
@@ -29,6 +30,7 @@ function App() {
       ) : (
         <ProductList />
       )}
+      <ProductPage/>
       <Footer />
     </div>
   );

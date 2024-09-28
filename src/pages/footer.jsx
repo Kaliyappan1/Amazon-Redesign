@@ -6,29 +6,29 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="font-bold text-xl mb-4">About LuxeMarket</h3>
+            <h3 className="font-bold text-xl mb-4">About Amazon</h3>
             <ul className="space-y-2">
               <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">About Us</a></li>
               <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">Careers</a></li>
               <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">Press Releases</a></li>
-              <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">LuxeMarket Cares</a></li>
+              <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">Amezon Cares</a></li>
             </ul>
           </div>
           <div>
             <h3 className="font-bold text-xl mb-4">Make Money with Us</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">Sell on LuxeMarket</a></li>
+              <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">Sell on Amazon</a></li>
               <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">Become an Affiliate</a></li>
               <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">Advertise Your Products</a></li>
-              <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">LuxeMarket Handmade</a></li>
+              <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">Amazon Handmade</a></li>
             </ul>
           </div>
           <div>
-            <h3 className="font-bold text-xl mb-4">LuxeMarket Payment Products</h3>
+            <h3 className="font-bold text-xl mb-4">Amazon Payment Products</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">LuxeMarket Rewards Visa</a></li>
-              <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">LuxeMarket.com Store Card</a></li>
-              <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">LuxeMarket Business Card</a></li>
+              <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">Amazon Rewards Visa</a></li>
+              <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">Amazon.com Store Card</a></li>
+              <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">Amazon Business Card</a></li>
               <li><a href="#" className="hover:text-orange-500 hover:underline transition-all duration-300">Shop with Points</a></li>
             </ul>
           </div>
@@ -67,7 +67,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 text-center text-sm">
-          <p>&copy; 2023 LuxeMarket. All rights reserved.</p>
+          <p>&copy; 2023 Amazon. All rights reserved.</p>
           <p className="mt-2">
             <a href="#" className="hover:underline">Privacy Notice</a> | 
             <a href="#" className="hover:underline ml-2">Terms of Use</a> | 
@@ -78,7 +78,7 @@ export default function Footer() {
       {/* Fixed GitHub Link Box */}
       <div className="fixed bottom-4 right-4 z-50">
       <a 
-        href="https://github.com/Kaliyappan1/Amazon-Redesign" 
+        href="https://github.com/Kaliyappan1/Amazon-Redesign" target='_blank'
         className="flex items-center border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-105 px-4 py-2 rounded-lg shadow-lg bg-white"
       >
         <Github className="h-5 w-5 mr-2" />

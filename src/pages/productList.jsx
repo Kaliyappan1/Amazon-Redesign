@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../pages/header";
 import FilterOptions from "../components/FilterOptions";
 import ProductCard from "../components/ProductCard";
+import Toast from "../components/Toast";
 // Mock product data
 const allProducts = [
   {
@@ -631,6 +632,13 @@ const ProductList = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSignupModal, setShowSignupModal] = useState(false);
 
+  const [cartCount, setCartCount] = useState(0);
+
+  const addToCart = (productName) => {
+    showToast(`${productName} has been added to your cart.`);
+    setCartCount((prevCount) => prevCount + 1); // Increment cart count
+  };
+
   // Filter products based on search term and other criteria
   useEffect(() => {
     const result = allProducts.filter(
@@ -679,9 +687,7 @@ const ProductList = () => {
     );
   };
 
-  const addToCart = (productName) => {
-    showToast(`${productName} has been added to your cart.`);
-  };
+ 
 
   const showToast = (message) => {
     setToast({ message, visible: true });
@@ -704,11 +710,12 @@ const ProductList = () => {
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
         onAccountClick={handleAccountClick}
+        cartCount={cartCount}
       />
       {/* Flex container for layout */}
-      <div className="flex container mx-auto p-2">
+      <div className="pt-20 flex container mx-auto p-2">
         {/* Left side: Filter options with sticky positioning */}
-        <div className="w-1/4 h-screen p-4 sticky top-0">
+        <div className="w-1/4 h-screen p-4 sticky top-20">
           <FilterOptions
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
@@ -725,7 +732,7 @@ const ProductList = () => {
 
         {/* Right side: Product list */}
         <div className="w-3/4 p-4 overflow-y-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 cursor-pointer lg:grid-cols-4 gap-4">
             {filteredProducts.map((product) => (
               <ProductCard
                 key={product.id}
@@ -739,7 +746,7 @@ const ProductList = () => {
         </div>
       </div>
 
-      {toast.visible && <div className="toast">{toast.message}</div>}
+      {toast.visible && <Toast message={toast.message} />}
     </div>
   );
 };

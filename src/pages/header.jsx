@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import { ShoppingCart, User, Search, Menu } from 'lucide-react';
 
-export default function Header({ onAccountClick, searchTerm, setSearchTerm }) {
+export default function Header({ onAccountClick, searchTerm, setSearchTerm, cartCount }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-gray-900 text-white shadow-lg">
+    <header className="fixed top-0 left-0 right-0 bg-gray-900 text-white shadow-lg z-50">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <a href="/" className="text-3xl font-bold transition duration-300 ease-in-out transform hover:scale-105">Amazon</a>
@@ -32,7 +32,7 @@ export default function Header({ onAccountClick, searchTerm, setSearchTerm }) {
           <nav className="hidden md:flex items-center space-x-6">
             <a href="/cart" className="flex items-center transition duration-200 hover:text-blue-500">
               <ShoppingCart className="mr-1" />
-              Cart
+              Cart ({cartCount})
             </a>
             <div className="relative inline-block text-left">
               <button

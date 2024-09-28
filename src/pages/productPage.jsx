@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { Star, ShoppingCart, Heart, Check } from 'lucide-react'
+import { useState } from 'react';
+import { Star, ShoppingCart, Heart, Check } from 'lucide-react';
 
 // Mock product data
 const product = {
@@ -31,20 +31,21 @@ const product = {
   relatedProducts: [
     { id: 2, name: 'Over-Ear Headphones', price: 199.99, image: '/placeholder.svg?height=100&width=100' },
     { id: 3, name: 'Portable Bluetooth Speaker', price: 79.99, image: '/placeholder.svg?height=100&width=100' },
-  ]
-}
+  ],
+};
 
 export default function ProductPage() {
-  const [mainImage, setMainImage] = useState(product.images[0])
-  const [quantity, setQuantity] = useState(1)
+  const [mainImage, setMainImage] = useState(product.images[0]);
+  const [quantity, setQuantity] = useState(1);
 
   const addToCart = () => {
-    alert(`${quantity} ${quantity > 1 ? 'items' : 'item'} added to your cart.`)
-  }
+    alert(`${quantity} ${quantity > 1 ? 'items' : 'item'} added to your cart.`);
+  };
 
   return (
     <div className="container mx-auto p-4">
       <div className="grid md:grid-cols-2 gap-8">
+        {/* Image Section */}
         <div>
           <img src={mainImage} alt={product.name} className="w-full h-auto rounded-lg mb-4" />
           <div className="flex space-x-2">
@@ -59,9 +60,12 @@ export default function ProductPage() {
             ))}
           </div>
         </div>
+
+        {/* Product Info Section */}
         <div>
           <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
           <div className="flex items-center mb-4">
+            {/* Star Rating */}
             {[...Array(5)].map((_, i) => (
               <Star key={i} className={`h-5 w-5 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} />
             ))}
@@ -69,11 +73,15 @@ export default function ProductPage() {
           </div>
           <p className="text-2xl font-bold mb-4">${product.price.toFixed(2)}</p>
           <p className="mb-6">{product.description}</p>
+
+          {/* Quantity Selector */}
           <div className="flex items-center space-x-4 mb-6">
             <button className="border rounded px-4 py-2 hover:bg-gray-100" onClick={() => setQuantity(Math.max(1, quantity - 1))}>-</button>
             <span>{quantity}</span>
             <button className="border rounded px-4 py-2 hover:bg-gray-100" onClick={() => setQuantity(quantity + 1)}>+</button>
           </div>
+
+          {/* Add to Cart and Favorite Buttons */}
           <div className="flex space-x-4 mb-6">
             <button onClick={addToCart} className="flex-1 border rounded bg-blue-500 text-white px-4 py-2 hover:bg-blue-600">
               <ShoppingCart className="mr-2 h-4 w-4" /> Add to Cart
@@ -82,6 +90,8 @@ export default function ProductPage() {
               <Heart className="h-4 w-4" />
             </button>
           </div>
+
+          {/* Specifications */}
           <div>
             <h2 className="text-lg font-semibold mb-2">Specifications</h2>
             <ul className="space-y-2">
@@ -93,6 +103,8 @@ export default function ProductPage() {
               ))}
             </ul>
           </div>
+
+          {/* Features */}
           <div className="mt-4">
             <h2 className="text-lg font-semibold mb-2">Features</h2>
             <ul className="space-y-2">
@@ -106,6 +118,8 @@ export default function ProductPage() {
           </div>
         </div>
       </div>
+
+      {/* Related Products Section */}
       <div className="mt-12">
         <h2 className="text-2xl font-bold mb-4">Related Products</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -119,5 +133,5 @@ export default function ProductPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

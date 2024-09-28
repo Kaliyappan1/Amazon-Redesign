@@ -9,21 +9,21 @@
     border-radius: 8px;
     box-shadow: 5px 6px 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    max-width: 300px; /* Adjust this to your desired width */
-    margin: 0 auto; /* Center align in the container */
+    max-width: 300px;
+    margin: 0 auto;
   }
   
   .filter-title {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 10px;
-    text-align: center; /* Center align title */
+    text-align: center; 
   }
   
   .filter-section {
-    margin-bottom: 15px; /* Space between sections */
-    border-bottom: 1px solid #e0e0e0; /* Add bottom border */
-    padding-bottom: 10px; /* Padding below section */
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0; 
+    padding-bottom: 10px; 
   }
   
   .filter-subtitle {
@@ -34,10 +34,10 @@
   
   .filter-select, .price-range, .rating-range {
     width: 100%;
-    padding: 6px; /* Smaller padding */
+    padding: 6px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 0.9rem; /* Smaller font size */
+    font-size: 0.9rem; 
   }
   
   .price-display {
@@ -52,16 +52,16 @@
   }
   
   .star {
-    font-size: 18px; /* Smaller star size */
+    font-size: 18px;
     color: #ccc;
   }
   
   .star.active {
-    color: #ffcc00; /* Yellow color for filled stars */
+    color: #ffcc00;
   }
   
   .rating-text {
-    margin-left: 4px; /* Smaller margin */
-    font-size: 0.8rem; /* Smaller text */
+    margin-left: 4px; 
+    font-size: 0.8rem; 
   }
   

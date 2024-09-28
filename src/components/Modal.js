@@ -3,7 +3,6 @@ import React from 'react';
 const Modal = ({ product, onClose }) => {
   if (!product) return null;
 
-  
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
       onClose(); 
@@ -12,18 +11,18 @@ const Modal = ({ product, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+      className="fixed inset-0 flex items-center top-20 justify-center bg-black bg-opacity-50 overflow-y-auto"
       onClick={handleOverlayClick}
     >
-      <div className="bg-white rounded-lg p-4 w-11/12 max-w-[70%] flex"> {/* Use flex layout */}
+      <div className="bg-white rounded-lg p-4 w-full max-w-[90%] sm:max-w-[80%] md:max-w-[90%] lg:max-w-[90%] xl:max-w-[90%] my-8 flex flex-col md:flex-row">
         
-        {/* Left side for image */}
-        <div className="w-[400px] h-[400px] flex-shrink-0">
+       
+        <div className="w-full md:w-[400px] h-[250px] md:h-[400px] flex-shrink-0 mb-4 md:mb-0">
           <img src={product.image} alt={product.name} className="w-full h-full object-cover rounded-md" />
         </div>
 
-        {/* Right side for details */}
-        <div className="flex-grow pl-4"> {/* Added padding to the left */}
+      
+        <div className="flex-grow md:pl-4">
           <h2 className="text-lg font-semibold">{product.name}</h2>
           <p className="text-gray-600 font-semibold">
             Price: ${(product.price * (1 - product.discount / 100)).toFixed(2)}
@@ -50,7 +49,7 @@ const Modal = ({ product, onClose }) => {
             ))}
           </ul>
 
-          <button onClick={onClose} className="mt-4  bg-gray-600 text-white py-2 px-10 rounded-md">
+          <button onClick={onClose} className="mt-4 bg-gray-600 text-white py-2 px-10 rounded-md">
             Close
           </button>
         </div>

@@ -6,22 +6,24 @@ export default function Header({ searchTerm, setSearchTerm, cartCount }) {
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-gray-900 text-white shadow-lg z-50">
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
-          <a href="/" className="text-3xl font-bold transition duration-300 ease-in-out transform hover:scale-105">Amazon</a>
+          <a href="/" className="text-3xl font-bold transition duration-300 ease-in-out transform hover:scale-105">
+            Amazon
+          </a>
           
           {/* Desktop Search Input */}
-          <div className="hidden md:flex items-center space-x-6 flex-grow justify-center">
+          <div className="hidden md:flex items-center flex-grow justify-center">
             <form className="flex-grow max-w-2xl" onSubmit={(e) => e.preventDefault()}>
               <div className="relative">
                 <input
                   type="search"
                   placeholder="Search products..."
-                  className="w-full pl-10 pr-4 py-3 rounded-full bg-gray-800 text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+                  className="w-5/6 mx-20 pl-10 pr-4 py-3 rounded-full bg-gray-800 text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)} // Update search term
+                  onChange={(e) => setSearchTerm(e.target.value)} 
                 />
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <Search className="absolute left-2 mx-20 top-1/2 transform -translate-y-1/2 text-gray-400" />
               </div>
             </form>
           </div>
@@ -35,9 +37,7 @@ export default function Header({ searchTerm, setSearchTerm, cartCount }) {
             <div className="relative inline-block text-left">
               <button
                 className="flex items-center transition duration-200 hover:text-blue-500"
-                onClick={() => {
-                  setIsMenuOpen(!isMenuOpen);
-                }}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 <User className="mr-1" />
                 Account

@@ -1334,7 +1334,7 @@ const ProductList = () => {
           />
         </div>
         <div className="w-3/4 p-4 overflow-y-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 cursor-pointer lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 cursor-pointer lg:grid-cols-3 gap-3">
             {filteredProducts.map((product) => (
               <div onClick={() => handleProductClick(product)} key={product.id}>
                 <ProductCard

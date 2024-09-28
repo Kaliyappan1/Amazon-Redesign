@@ -2,14 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
+
 
 .filter-container {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 6px 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
     max-width: 300px; /* Adjust this to your desired width */
     margin: 0 auto; /* Center align in the container */
